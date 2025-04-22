@@ -63,9 +63,18 @@ List<T>::~List() {
 // a run-time error and end the program.
 //==============================================================
 
-//==============================================================
+//================================================= 
 // isEmpty
-//==============================================================
+// Returns false if list is empty, true otherwise
+// Parameters:
+//  None 
+// Return Value:
+//  Bool, whether or not the list is empty
+//================================================= 
+template <typename T>
+bool List<T>::isEmpty() const {
+	return head == nullptr;
+}
 
 //==============================================================
 // operator+  (concatenate two lists)

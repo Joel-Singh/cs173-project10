@@ -11,5 +11,9 @@
 int main ( void )
 {
 	List<int> list1;
+	cout << "isEmpty should be true" << endl;
+	cout << "Expected: 1" << endl;
+	cout << "Actual: " << list1.isEmpty() << endl;
+	cout << endl;
 }
 
