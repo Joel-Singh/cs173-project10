@@ -1,6 +1,6 @@
 //==============================================================
-// your name here
-// date here
+// Joel Singh
+// April 22nd
 // List.cpp
 // This file contains the class method definitions for
 // the List class.
