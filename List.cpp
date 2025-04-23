@@ -39,9 +39,33 @@ List<T>::~List() {
 // operator=
 //==============================================================
 
-//==============================================================
-// append
-//==============================================================
+//================================================= 
+// Append
+// Appends an element to the back of the list
+// Parameters:
+//  item: The element to append 
+// Return Value:
+//  Void
+//================================================= 
+template <typename T>
+void List<T>::append(const T& item) {
+	Node* n = new Node;
+
+	n->item = item;
+	n->next = nullptr;
+
+	Node* last = head;
+	if (last == nullptr) {
+		head = n;
+		return;
+	}
+
+	while (last->next != nullptr) {
+		last = last->next;
+	}
+
+	last->next = n;
+}
 
 //==============================================================
 // insert  ( item, position )
