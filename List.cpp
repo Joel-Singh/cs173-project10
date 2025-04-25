@@ -119,9 +119,26 @@ void List<T>::insert(const T& item, int index) {
 	ptr->next = n;
 }
 
-//==============================================================
+//================================================= 
 // length
-//==============================================================
+// Returns the length of the list
+// Parameters:
+//  None 
+// Return Value:
+//  Integer, the length of a list
+//================================================= 
+template <typename T>
+int List<T>::length() const {
+	int len = 0;
+	Node* ptr = head;
+	while (ptr != nullptr) {
+		len++;
+		ptr = ptr->next;
+	}
+
+	return len;
+};
+
 
 //==============================================================
 // operator[]

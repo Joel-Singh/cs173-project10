@@ -210,5 +210,13 @@ int main ( void )
 		cout << "Thrown error" << endl;
 	}
 	cout << endl;
+
+	cout << "Testing length" << endl;
+	List<int> list19;
+	list19.append(0);
+	list19.append(0);
+	list19.append(0);
+	cout << "Expected output: 3" << endl;
+	cout << "Actual output: " << list19.length() << endl;
 }
 
