@@ -67,9 +67,57 @@ void List<T>::append(const T& item) {
 	last->next = n;
 }
 
-//==============================================================
-// insert  ( item, position )
-//==============================================================
+//================================================= 
+// insert
+// Inserts a new value at the specified position. Valid indices are 0..length. A runtime error is generated for invalid indexes.
+// Parameters:
+//  item: The item to insert 
+//  index: The index to insert at, index=length is like append
+// Return Value:
+//  Void
+//================================================= 
+template <typename T>
+void List<T>::insert(const T& item, int index) {
+	if (index < 0) {
+		throw runtime_error("Invalid index");
+	}
+
+	Node* n = new Node;
+	n->item = item;
+	n->next = nullptr;
+
+	// Empty list
+	if (head == nullptr) { 
+		head = n;
+		return;
+	}
+
+	// Beginning of the list
+	if (index == 0) {
+		n->next = head;
+		head = n;
+		return;
+	}
+
+	Node* ptr = head;
+	for (;(index-1) > 0;index--) {
+		ptr = ptr->next;
+		// Invalid higher index
+		if (ptr == nullptr) {
+			throw runtime_error("Invalid index");
+		}
+	}
+
+	// End of the list
+	if (ptr->next == nullptr) {
+		ptr->next = n;
+		return;
+	}
+
+	// Middle of the list
+	n->next = ptr->next;
+	ptr->next = n;
+}
 
 //==============================================================
 // length
