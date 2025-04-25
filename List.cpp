@@ -129,11 +129,50 @@ void List<T>::insert(const T& item, int index) {
 // a run-time error and end the program.
 //==============================================================
 
-//==============================================================
+//================================================= 
 // remove
-// Valid indices are 0 to size-1.   Invalid indices generate
+// Removes an element. Valid indices are 0 to size-1. Invalid indices generate
 // a run-time error and end the program.
-//==============================================================
+// Parameters:
+//  index: The indice to remove 
+// Return Value:
+//  Void
+//================================================= 
+template <typename T>
+void List<T>::remove(int index) {
+	if (index < 0) {
+		throw runtime_error("Can't remove from a negative indice");
+	}
+
+	if (head == nullptr) {
+		throw runtime_error("Can't remove from empty list");
+	}
+
+	// Single element list
+	if (index == 0 && head->next == nullptr) {
+		head = nullptr;
+		return;
+	}
+
+	// Beginning of list
+	if (index == 0) {
+		head = head->next;
+		return;
+	}
+
+	Node* ptr = head;
+	for (int i = 0; i < (index-1); i++) {
+		if (ptr->next == nullptr) {
+			throw runtime_error("Invalid index");
+		}
+		ptr = ptr->next;
+	}
+	if (ptr->next == nullptr) {
+		throw runtime_error("Invalid index");
+	}
+	ptr->next = ptr->next->next;
+}
+
 
 //================================================= 
 // isEmpty

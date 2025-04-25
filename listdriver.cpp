@@ -122,5 +122,93 @@ int main ( void )
 	list10.insert(99, 4);
 	cout << "Actual: " << list10 << endl;
 	cout << endl;
+
+	cout << "Remove on an empty list throws error" << endl;
+	List<int> list11;
+	cout << "Expected output: Thrown error" << endl;
+	cout << "Actual output: ";
+	try {
+		list11.remove(0);
+		cout << "Not thrown error" << endl;
+	} catch (...) {
+		cout << "Thrown error" << endl;
+	}
+	cout << endl;
+
+	cout << "Remove on a single element list" << endl;
+	List<int> list12;
+	list12.append(99);
+	list12.remove(0);
+	cout << "Expected output: [ ]" << endl;
+	cout << "Actual output: " << list12;
+	cout << endl;
+	cout << endl;
+
+	cout << "Remove at the beginning of a list" << endl;
+	List<int> list13;
+	list13.append(1);
+	list13.append(2);
+	list13.remove(0);
+	cout << "Expected output: [ 2 ]" << endl;
+	cout << "Actual output: " << list13 << endl;
+	cout << endl;
+
+	cout << "Remove in the middle of the list" << endl;
+	List<int> list14;
+	list14.append(0);
+	list14.append(1);
+	list14.append(2);
+	list14.remove(1);
+	cout << "Expected output: [ 0, 2 ]" << endl;
+	cout << "Actual output: " << list14 << endl;
+	cout << endl;
+
+	cout << "Remove at the end of a list" << endl;
+	List<int> list15;
+	list15.append(0);
+	list15.append(1);
+	list15.append(2);
+	list15.remove(2);
+	cout << "Expected output: [ 0, 1 ]" << endl;
+	cout << "Actual output: " << list15 << endl;
+	cout << endl;
+
+	cout << "Remove at invalid lower index throws error" << endl;
+	List<int> list16;
+	cout << "Expected output: Thrown error" << endl;
+	cout << "Actual output: ";
+	try {
+		list16.remove(-1);
+		cout << "Not thrown error" << endl;
+	} catch (...) {
+		cout << "Thrown error" << endl;
+	}
+	cout << endl;
+
+	cout << "Remove at invalid higher index throw error" << endl;
+	List<int> list17;
+	list17.append(99);
+	cout << "Expected output: Thrown error" << endl;
+	cout << "Actual output: ";
+	try {
+		list17.remove(1);
+		cout << "Not thrown error" << endl;
+	} catch (...) {
+		cout << "Thrown error" << endl;
+	}
+	cout << endl;
+
+	cout << "Remove at invalid higher index throw error" << endl;
+	List<int> list18;
+	list18.append(99);
+	cout << "Expected output: Thrown error" << endl;
+	cout << "Actual output: ";
+	try {
+		list18.remove(2);
+		cout << "Not thrown error" << endl;
+	} catch (...) {
+		cout << "Thrown error" << endl;
+	}
+	cout << endl;
 }
 
