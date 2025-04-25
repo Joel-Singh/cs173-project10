@@ -100,7 +100,7 @@ void List<T>::insert(const T& item, int index) {
 	}
 
 	Node* ptr = head;
-	for (;(index-1) > 0;index--) {
+	for (int i = 0; i < (index-1); i++) {
 		ptr = ptr->next;
 		// Invalid higher index
 		if (ptr == nullptr) {
