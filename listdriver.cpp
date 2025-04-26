@@ -218,5 +218,42 @@ int main ( void )
 	list19.append(0);
 	cout << "Expected output: 3" << endl;
 	cout << "Actual output: " << list19.length() << endl;
+	cout << endl;
+
+	cout << "[] operator below 0 throw error" << endl;
+	List<int> list20;
+	cout << "Expected output: Thrown error" << endl;
+	cout << "Actual output: ";
+	try {
+		list20[-1];
+		cout << "Not thrown error" << endl;
+	} catch (...) {
+		cout << "Thrown error" << endl;
+	}
+	cout << endl;
+
+	cout << "[] operator on single list returns element" << endl;
+	List<int> list21;
+	list21.append(99);
+	cout << "Expected output: 99" << endl;
+	cout << "Actual output: " << list21[0] << endl;
+	cout << endl;
+
+	cout << "[] operator on list of length 2" << endl;
+	List<int> list22;
+	list22.append(90);
+	list22.append(91);
+	cout << "Expected output: 91" << endl;
+	cout << "Actual output: " << list22[1] << endl;
+	cout << endl;
+
+	cout << "[] operator on list of length 3" << endl;
+	List<int> list23;
+	list23.append(90);
+	list23.append(91);
+	list23.append(92);
+	cout << "Expected output: 92" << endl;
+	cout << "Actual output: " << list23[2] << endl;
+	cout << endl;
 }
 

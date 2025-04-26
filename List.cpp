@@ -145,6 +145,21 @@ int List<T>::length() const {
 // Valid indices are 0 to size-1.   Invalid indices generate
 // a run-time error and end the program.
 //==============================================================
+template <typename T>
+T& List<T>::operator[](int index) const {
+	if (index < 0)	{
+		throw runtime_error("Invalid index");
+	} else if (head == nullptr) {
+		throw runtime_error("Can't access empty list");
+	}
+
+	Node* ptr = head;
+	for (int i = 0; i < index; i++) {
+		ptr = ptr->next;
+	}
+
+	return ptr->item;
+};
 
 //================================================= 
 // remove
