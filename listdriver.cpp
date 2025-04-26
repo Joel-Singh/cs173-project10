@@ -266,5 +266,21 @@ int main ( void )
 	cout << "Expected output: [ 0, 1, 2 ]" << endl;
 	cout << "Actual output: " << list25 << endl;
 	cout << endl;
+
+	cout << "Addition operator" << endl;
+	cout << "Expected output: [1, 2, 3, 1, 2, 3]" << endl;
+	List<int> list26;
+	List<int> list27;
+
+	list26.append(1);
+	list26.append(2);
+	list26.append(3);
+
+	list27.append(1);
+	list27.append(2);
+	list27.append(3);
+	
+	List<int> list28 = list26 + list27;
+	cout << "Actual output: "<< list28;
 }
 
