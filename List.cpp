@@ -21,9 +21,20 @@ List<T>::List() {
 	head = nullptr;
 }
 
-//==============================================================
-// copy constructor
-//==============================================================
+//================================================= 
+// Copy constructor
+// Copies one list from another
+// Parameters:
+//  mylist: The other list 
+//================================================= 
+template <typename T>
+List<T>::List(const List<T>& mylist) {
+	head = nullptr;
+
+	for (int i = 0; i < mylist.length(); i++) {
+		this->append(mylist[i]);
+	}
+};
 
 //================================================= 
 // Destructor

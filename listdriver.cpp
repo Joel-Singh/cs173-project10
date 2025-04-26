@@ -255,5 +255,16 @@ int main ( void )
 	cout << "Expected output: 92" << endl;
 	cout << "Actual output: " << list23[2] << endl;
 	cout << endl;
+
+	cout << "Copy constructor" << endl;
+	List<int> list24;
+	list24.append(0);
+	list24.append(1);
+	list24.append(2);
+
+	List<int> list25(list24);
+	cout << "Expected output: [ 0, 1, 2 ]" << endl;
+	cout << "Actual output: " << list25 << endl;
+	cout << endl;
 }
 
