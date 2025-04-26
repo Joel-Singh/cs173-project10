@@ -230,9 +230,14 @@ bool List<T>::isEmpty() const {
 	return head == nullptr;
 }
 
-//==============================================================
-// operator+  (concatenate two lists)
-//==============================================================
+//================================================= 
+// Concatentation operator
+// Concatenate 2 lists with the plus
+// Parameters:
+//  mylist: The list to concatenate with this 
+// Return Value:
+//  Concatenated list
+//================================================= 
 template <typename T>
 List<T> List<T>::operator+(const List<T>& mylist) const {
 	List a(mylist);
