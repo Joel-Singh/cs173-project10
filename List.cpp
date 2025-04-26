@@ -271,6 +271,23 @@ List<T> List<T>::operator+(const List<T>& mylist) const {
 };
 
 
-//==============================================================
+//================================================= 
 // clear
-//==============================================================
+// Clears the list, leaving it empty
+// Parameters:
+//  None 
+// Return Value:
+//  Void
+//================================================= 
+template <typename T>
+void List<T>::clear() {
+	Node* next = head;
+	while (next != nullptr) {
+		next = head->next;
+		delete head;
+		head = next;
+	}
+
+	head = nullptr;
+};
+

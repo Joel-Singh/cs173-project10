@@ -294,5 +294,15 @@ int main ( void )
 	List<int> list30 = list29;
 	cout << "Actual output: [1, 2, 3]" << endl;
 	cout << endl;
+
+	cout << "Clear method" << endl;
+	List<int> list31;
+	list31.append(1);
+	list31.append(2);
+	list31.append(3);
+
+	cout << "Expected output: [ ]" << endl;
+	list31.clear();
+	cout << "Actual output: " << list31 << endl;
 }
 
