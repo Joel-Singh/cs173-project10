@@ -46,9 +46,29 @@ template <typename T>
 List<T>::~List() {
 }
 
-//==============================================================
-// operator=
-//==============================================================
+//================================================= 
+// Assignment operator
+// Assigns one list to another
+// Parameters:
+//  mylist: The list to copy 
+// Return Value:
+//  *this
+//================================================= 
+template <typename T>
+List<T> List<T>::operator=(const List<T>& mylist) {
+	Node* next = head;
+	while (next != nullptr) {
+		next = head->next;
+		delete head;
+		head = next;
+	}
+
+	for (int i = 0; i < mylist.length(); i++) {
+		this->append(mylist[i]);
+	}
+
+	return *this;
+};
 
 //================================================= 
 // Append
@@ -254,4 +274,3 @@ List<T> List<T>::operator+(const List<T>& mylist) const {
 //==============================================================
 // clear
 //==============================================================
-

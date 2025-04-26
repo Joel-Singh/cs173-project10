@@ -281,6 +281,18 @@ int main ( void )
 	list27.append(3);
 	
 	List<int> list28 = list26 + list27;
-	cout << "Actual output: "<< list28;
+	cout << "Actual output: "<< list28 << endl;
+	cout << endl;
+
+	cout << "Assignment operator" << endl;
+	cout << "EXpected output: [1, 2, 3]" << endl;
+	List<int> list29;
+	list29.append(1);
+	list29.append(2);
+	list29.append(3);
+
+	List<int> list30 = list29;
+	cout << "Actual output: [1, 2, 3]" << endl;
+	cout << endl;
 }
 
