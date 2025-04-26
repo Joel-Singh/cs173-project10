@@ -44,6 +44,14 @@ List<T>::List(const List<T>& mylist) {
 //================================================= 
 template <typename T>
 List<T>::~List() {
+	Node* next = head;
+	while (next != nullptr) {
+		next = head->next;
+		delete head;
+		head = next;
+	}
+
+	head = nullptr;
 }
 
 //================================================= 
