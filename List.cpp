@@ -214,13 +214,17 @@ void List<T>::remove(int index) {
 
 	// Single element list
 	if (index == 0 && head->next == nullptr) {
+		delete head;
 		head = nullptr;
 		return;
 	}
 
 	// Beginning of list
 	if (index == 0) {
+		Node* for_deletion = head;
 		head = head->next;
+		
+		delete for_deletion;
 		return;
 	}
 
@@ -234,7 +238,10 @@ void List<T>::remove(int index) {
 	if (ptr->next == nullptr) {
 		throw runtime_error("Invalid index");
 	}
+	Node* for_deletion = ptr->next;
 	ptr->next = ptr->next->next;
+
+	delete for_deletion;
 }
 
 
