@@ -31,7 +31,8 @@ template <typename T>
 List<T>::List(const List<T>& mylist) {
 	head = nullptr;
 
-	for (int i = 0; i < mylist.length(); i++) {
+	int len = mylist.length();
+	for (int i = 0; i < len; i++) {
 		this->append(mylist[i]);
 	}
 };
