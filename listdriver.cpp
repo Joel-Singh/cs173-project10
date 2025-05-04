@@ -284,6 +284,23 @@ int main ( void )
 	cout << "Actual output: "<< list28 << endl;
 	cout << endl;
 
+	cout << "Addition operator (testing not reversed)" << endl;
+	cout << "Expected output: [1, 2, 3, 4, 5, 6]" << endl;
+	List<int> list32;
+	List<int> list33;
+
+	list32.append(1);
+	list32.append(2);
+	list32.append(3);
+
+	list33.append(4);
+	list33.append(5);
+	list33.append(6);
+	
+	List<int> list34 = list32 + list33;
+	cout << "Actual output: "<< list34 << endl;
+	cout << endl;
+
 	cout << "Assignment operator" << endl;
 	cout << "EXpected output: [1, 2, 3]" << endl;
 	List<int> list29;
