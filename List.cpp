@@ -155,12 +155,6 @@ void List<T>::insert(const T& item, int index) {
 		}
 	}
 
-	// End of the list
-	if (ptr->next == nullptr) {
-		ptr->next = n;
-		return;
-	}
-
 	// Middle of the list
 	n->next = ptr->next;
 	ptr->next = n;
