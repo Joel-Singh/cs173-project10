@@ -30,10 +30,24 @@ List<T>::List() {
 template <typename T>
 List<T>::List(const List<T>& mylist) {
 	head = nullptr;
-
 	int len = mylist.length();
-	for (int i = 0; i < len; i++) {
-		this->append(mylist[i]);
+
+	if (len == 0) {
+		return;
+	}
+
+	Node* new_node = new Node;
+	new_node->item = mylist[0];
+
+	head = new_node;
+	Node* ptr = head;
+
+	for (int i = 1; i < len; i++) {
+		Node* new_node = new Node; 
+		new_node->item = mylist[i];
+
+		ptr->next = new_node;
+		ptr = new_node;
 	}
 };
 
