@@ -280,7 +280,8 @@ List<T> List<T>::operator+(const List<T>& mylist) const {
 	List a(mylist);
 	List b(*this);
 
-	for (int i = 0; i < a.length(); i++) {
+	int a_length = a.length();
+	for (int i = 0; i < a_length; i++) {
 		b.append(a[i]);
 	}
 
